@@ -1,3 +1,5 @@
 [user]
 	email = fctranngoc@gmail.com
-	name = shin
+	name = shin-client
+[credential]
+	helper = store
