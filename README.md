@@ -19,6 +19,6 @@
 2. Chạy script bootstrap.sh để thiết lập symlink:
     ```bash
     chmod +x ~/.dotfiles/scripts/bootstrap.sh
-    ~/.dotfiles/scripts/bootstrap.
+    ~/.dotfiles/scripts/bootstrapi.sh
     ```
 
