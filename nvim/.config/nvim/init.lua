@@ -1,3 +1,3 @@
-require("lua.settings")
-require("lua.maps")
-require("lua.lazy")
+require("shintran.settings")
+require("shintran.maps")
+require("shintran.lazy")
