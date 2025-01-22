@@ -14,7 +14,7 @@ return {
 				"eslint",
 				"html",
 				"jsonls",
-				--                "tsserver",
+				"tsserver",
 				"pyright",
 				"tailwindcss",
 			},
