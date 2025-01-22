@@ -16,6 +16,7 @@ return {
 				"jsonls",
 				"tsp_server",
 				"ts_ls",
+				"emmet_ls",
 				"pyright",
 				"tailwindcss",
 			},

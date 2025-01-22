@@ -2,8 +2,14 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
+		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
 		{ "folke/neodev.nvim", opts = {} },
+		"hrsh7th/cmp-buffer", -- Gợi ý từ buffer hiện tại
+		"hrsh7th/cmp-path", -- Gợi ý đường dẫn file
+		"hrsh7th/cmp-cmdline", -- Gợi ý trong command-line
+		"L3MON4D3/LuaSnip", -- Plugin snippet (cần cho auto-completion)
+		"saadparwaiz1/cmp_luasnip", -- Kết nối nvim-cmp với LuaSnip
 	},
 	config = function()
 		-- Cấu hình mason
@@ -14,11 +20,10 @@ return {
 			automatic_installation = true,
 		})
 
+		local cmp = require("cmp")
 		local nvim_lsp = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
-
 		local protocol = require("vim.lsp.protocol")
-
 		local on_attach = function(client, bufnr)
 			-- format on save
 			if client.server_capabilities.documentFormattingProvider then
@@ -84,6 +89,12 @@ return {
 			end,
 			["pyright"] = function()
 				nvim_lsp["pyright"].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+			end,
+			["emmet_ls"] = function()
+				nvim_lsp["emmet_ls"].setup({
 					on_attach = on_attach,
 					capabilities = capabilities,
 				})
