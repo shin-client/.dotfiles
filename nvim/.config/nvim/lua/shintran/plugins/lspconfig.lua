@@ -6,6 +6,14 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		-- Cấu hình mason
+		require("mason").setup()
+
+		-- Cấu hình mason-lspconfig sau khi lspconfig đã được cài đặt
+		require("mason-lspconfig").setup({
+			automatic_installation = true,
+		})
+
 		local nvim_lsp = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
 
@@ -32,8 +40,14 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["tsserver"] = function()
-				nvim_lsp["tsserver"].setup({
+			["ts_ls"] = function()
+				nvim_lsp["ts_ls"].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+			end,
+			["tsp_server"] = function()
+				nvim_lsp["tsp_server"].setup({
 					on_attach = on_attach,
 					capabilities = capabilities,
 				})

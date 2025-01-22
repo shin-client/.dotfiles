@@ -14,7 +14,8 @@ return {
 				"eslint",
 				"html",
 				"jsonls",
-				"tsserver",
+				"tsp_server",
+				"ts_ls",
 				"pyright",
 				"tailwindcss",
 			},
@@ -31,4 +32,6 @@ return {
 			},
 		})
 	end,
+	cmd = { "Mason", "MasonInstall", "MasonUpdate", "MasonUninstall", "MasonLog" }, -- Đảm bảo plugin chỉ tải khi gõ lệnh :Mason
+	event = { "BufReadPre", "BufNewFile" }, -- Hoặc tải trước khi mở file
 }
