@@ -10,6 +10,7 @@ fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH=$PATH:~/.local/share/lua-language-server/bin
 
