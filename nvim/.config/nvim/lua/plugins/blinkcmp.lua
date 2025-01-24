@@ -1,6 +1,14 @@
 return {
   "saghen/blink.cmp",
   opts = {
+    completion = {
+      list = {
+        selection = {
+          preselect = true,
+          auto_insert = false,
+        },
+      },
+    },
     keymap = {
       ["<cr>"] = { "select_and_accept", "fallback" },
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },

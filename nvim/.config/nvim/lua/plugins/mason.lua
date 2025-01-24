@@ -18,6 +18,8 @@ return {
       "json-lsp",
       "prettier",
       "eslint-lsp",
+      "clang-format",
+      "clangd",
     },
   },
 }
